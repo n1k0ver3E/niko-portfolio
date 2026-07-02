@@ -10,6 +10,7 @@ import Markdown from "react-markdown";
 import ContactSection from "@/components/section/contact-section";
 import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
+import MyWorkSection from "@/components/section/my-work-section";
 import WorkSection from "@/components/section/work-section";
 import { ArrowUpRight } from "lucide-react";
 
@@ -28,7 +29,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
                 yOffset={8}
-                text={`${t.heroGreetingPrefix}${data.name.split(" ")[0]}`}
+                text={`${t.heroGreetingPrefix}`}
               />
               <BlurFadeText
                 className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
@@ -137,9 +138,12 @@ export default function Page() {
       </section>
       <section id="projects">
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
-          <ProjectsSection />
+            <MyWorkSection />
         </BlurFade>
       </section>
+      <BlurFade delay={BLUR_FADE_DELAY * 12}>
+            <ProjectsSection />
+      </BlurFade>
       <section id="hackathons">
         <BlurFade delay={BLUR_FADE_DELAY * 13}>
           <HackathonsSection />

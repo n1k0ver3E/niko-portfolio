@@ -30,9 +30,7 @@ export default function ContactSection() {
         <p className="mx-auto max-w-lg text-muted-foreground text-balance">
           {t.contactBeforeLink}
           <Link
-            href={data.contact.social.X.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`mailto:${data.contact.email}`}
             className="text-blue-500 hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
           >
             {t.contactLink}

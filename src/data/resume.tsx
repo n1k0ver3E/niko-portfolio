@@ -17,8 +17,8 @@ export const DATA = {
   description:
     "Full-stack engineer building agent platforms — realtime voice agents, agent harnesses, and the infrastructure that lets AI drive real products.",
   summary:
-    "I'm a founding team member at [Cookiy AI](https://www.cookiy.ai), a realtime user-research platform (funded at eight figures USD, 50k+ respondents and 700+ studies in production). " +
-    "I co-authored [AOI](https://arxiv.org/abs/2603.03378) (arXiv 2026), a multi-agent framework for autonomous cloud diagnosis. ",
+    "I'm a founding team member at [Cookiy AI](https://www.cookiy.ai), a realtime user-research platform (funded at eight figures USD, 50k+ respondents and 700+ studies in production).\n\n" +
+    "On the research side, I co-authored [AOI](https://arxiv.org/abs/2603.03378) (under review at SIGKDD 2026), a multi-agent framework for autonomous cloud diagnosis.",
   avatarUrl: "https://avatars.githubusercontent.com/u/14194564?v=4",
   skills: [
     { name: "TypeScript", icon: Typescript },
@@ -113,12 +113,30 @@ export const DATA = {
       school: "Jimei University",
       href: "https://www.jmu.edu.cn",
       degree: "B.Eng. in Network Engineering",
-      logoUrl: "",
+      logoUrl: "/logos/jmu.png",
       start: "2014",
       end: "2018",
     },
   ],
   projects: [
+    {
+      title: "user-research-skill",
+      href: "https://github.com/cookiy-ai/user-research-skill",
+      dates: "2026 - Present",
+      active: true,
+      description:
+        "Cookiy's open-source skill that turns any coding agent — Claude Code, Codex, Cursor, OpenClaw — into an end-to-end user researcher: AI-moderated interviews, synthetic users, quant surveys, participant recruitment. **900+ stars on GitHub**, driving the platform through the MCP / CLI surface I own.",
+      technologies: ["Claude Skills", "MCP", "CLI", "Shell"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/cookiy-ai/user-research-skill",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
     {
       title: "Realtime Voice Interview Agent",
       href: "https://www.cookiy.ai",
@@ -186,53 +204,17 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Recruit Platform (0→1)",
-      href: "https://www.cookiy.ai",
-      dates: "2025 - Present",
-      active: true,
-      description:
-        "Built Cookiy's participant-recruitment vertical solo: adapter + runtime-registry pattern normalizing Prolific / CloudResearch / CINT into one domain model (new supplier ≈ one adapter), a composable screener engine (piped questions, min-selections, 3-state screen-in), and a concurrency-safe matching & billing engine — DB transactions, conditional atomic updates, idempotent wallet dual-write with drift=0. 50k+ respondents and 700+ studies served in production.",
-      technologies: ["NestJS", "Prisma", "PostgreSQL", "Redis", "React"],
-      links: [
-        {
-          type: "Website",
-          href: "https://www.cookiy.ai",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "",
-    },
-    {
-      title: "Claude Code Usage Dashboard",
-      href: "https://usage.nikopang.com",
+      title: "open-browser-use",
+      href: "https://github.com/iFurySt/open-browser-use",
       dates: "2026",
       active: true,
       description:
-        "I'm a heavy user of AI coding tools — this dashboard makes it measurable. A GitHub Actions pipeline auto-syncs my daily Claude Code token usage to a public page: ~2B tokens and $1.6k+ API-equivalent cost in a single month, broken down by input/output/cache and per-day cost.",
-      technologies: ["GitHub Actions", "TypeScript", "Automation"],
-      links: [
-        {
-          type: "Website",
-          href: "https://usage.nikopang.com",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/projects/token-usage.png",
-      video: "",
-    },
-    {
-      title: "ard-registry",
-      href: "https://github.com/n1k0ver3E/ard-registry",
-      dates: "2026",
-      active: true,
-      description:
-        "An ard-spec v0.9 conformant Agentic Resource Discovery (ARD) registry in TypeScript — crawls ai-catalog.json, BM25 search, federation between registries, self-publishes via .well-known. Verified with the official conformance CLI.",
-      technologies: ["TypeScript", "Node.js", "BM25"],
+        "Contributor to [iFurySt](https://github.com/iFurySt)'s platform-neutral Browser Use for AI agents — real Chrome automation with a CLI plus JS / Python / Go SDKs over JSON-RPC, no lock-in, dead simple. 170+ stars on GitHub.",
+      technologies: ["JavaScript", "CDP", "CLI", "SDK"],
       links: [
         {
           type: "Source",
-          href: "https://github.com/n1k0ver3E/ard-registry",
+          href: "https://github.com/iFurySt/open-browser-use",
           icon: <Icons.github className="size-3" />,
         },
       ],
@@ -240,17 +222,17 @@ export const DATA = {
       video: "",
     },
     {
-      title: "obsidian-image-uploader",
-      href: "https://github.com/n1k0ver3E/obsidian-image-uploader",
+      title: "HeyYo",
+      href: "https://github.com/iFurySt",
       dates: "2026",
       active: true,
       description:
-        "Obsidian plugin that auto-uploads pasted images to a GitHub repo and rewrites links to permanent jsDelivr CDN URLs — keeping vaults lightweight while notes stay portable.",
-      technologies: ["TypeScript", "Obsidian API", "GitHub API"],
+        "Collaboration with [iFurySt](https://github.com/iFurySt) on a native macOS voice-input app: press Fn to dictate anywhere — local Ogg/Opus capture, a Go server fanning out to Gemini / Soniox / Deepgram / Fireworks ASR in parallel, Gemini-refined final text. Windows preview in the works.",
+      technologies: ["SwiftUI", "Go", "ASR", "Gemini"],
       links: [
         {
-          type: "Source",
-          href: "https://github.com/n1k0ver3E/obsidian-image-uploader",
+          type: "GitHub",
+          href: "https://github.com/iFurySt",
           icon: <Icons.github className="size-3" />,
         },
       ],

@@ -12,7 +12,8 @@ export const DATA_ZH: AppData = {
   description:
     "全栈工程师，专注 agent 平台 —— 实时语音 agent、agent harness，以及让 AI 驱动真实产品的基础设施。",
   summary:
-    "我是 [Cookiy AI](https://www.cookiy.ai) 的创始团队成员。Cookiy 是一个实时用户调研平台（融资额八位数美元，生产环境累计服务 50k+ 受访者、700+ 研究项目）。我与人合著了 [AOI](https://arxiv.org/abs/2603.03378)（arXiv 2026），一个面向云端自主诊断的多 agent 框架。",
+    "我是 [Cookiy AI](https://www.cookiy.ai) 的创始团队成员。Cookiy 是一个实时用户调研平台（融资额八位数美元，生产环境累计服务 50k+ 受访者、700+ 研究项目）。\n\n" +
+    "研究方面，我与人合著了 [AOI](https://arxiv.org/abs/2603.03378)（在投 SIGKDD 2026），一个面向云端自主诊断的多 agent 框架。",
   avatarUrl: "https://avatars.githubusercontent.com/u/14194564?v=4",
   skills: DATA.skills,
   navbar: [
@@ -93,12 +94,30 @@ export const DATA_ZH: AppData = {
       school: "集美大学",
       href: "https://www.jmu.edu.cn",
       degree: "网络工程 工学学士",
-      logoUrl: "",
+      logoUrl: "/logos/jmu.png",
       start: "2014",
       end: "2018",
     },
   ],
   projects: [
+    {
+      title: "user-research-skill",
+      href: "https://github.com/cookiy-ai/user-research-skill",
+      dates: "2026 - Present",
+      active: true,
+      description:
+        "Cookiy 的开源 skill：让任意 coding agent —— Claude Code、Codex、Cursor、OpenClaw —— 变成端到端的用户研究员：AI 主持访谈、合成用户、量化问卷、参与者招募。**GitHub 900+ star**，底层跑在我负责的 MCP / CLI 接入面上。",
+      technologies: ["Claude Skills", "MCP", "CLI", "Shell"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/cookiy-ai/user-research-skill",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
     {
       title: "Realtime Voice Interview Agent",
       href: "https://www.cookiy.ai",
@@ -166,53 +185,17 @@ export const DATA_ZH: AppData = {
       video: "",
     },
     {
-      title: "Recruit Platform (0→1)",
-      href: "https://www.cookiy.ai",
-      dates: "2025 - Present",
-      active: true,
-      description:
-        "独立从零搭建 Cookiy 的参与者招募业务线：用 adapter + 运行时注册表模式把 Prolific / CloudResearch / CINT 归一到同一个领域模型（接入新 supplier ≈ 写一个 adapter）；可组合的甄别（screener）引擎（piped questions、min-selections、三态 screen-in）；以及并发安全的匹配与计费引擎 —— 数据库事务、条件原子更新、幂等的钱包双写（drift=0）。生产环境已服务 50k+ 受访者、700+ 研究项目。",
-      technologies: ["NestJS", "Prisma", "PostgreSQL", "Redis", "React"],
-      links: [
-        {
-          type: "Website",
-          href: "https://www.cookiy.ai",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "",
-    },
-    {
-      title: "Claude Code Usage Dashboard",
-      href: "https://usage.nikopang.com",
+      title: "open-browser-use",
+      href: "https://github.com/iFurySt/open-browser-use",
       dates: "2026",
       active: true,
       description:
-        "我是 AI coding 工具的重度使用者 —— 这个看板把「重度」变成了可量化的数据。GitHub Actions 流水线每天自动同步我的 Claude Code token 用量到公开页面：单月约 20 亿 token、$1.6k+ API 等值成本，按 input / output / 缓存拆分并展示每日成本。",
-      technologies: ["GitHub Actions", "TypeScript", "Automation"],
-      links: [
-        {
-          type: "Website",
-          href: "https://usage.nikopang.com",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/projects/token-usage.png",
-      video: "",
-    },
-    {
-      title: "ard-registry",
-      href: "https://github.com/n1k0ver3E/ard-registry",
-      dates: "2026",
-      active: true,
-      description:
-        "用 TypeScript 实现、符合 ard-spec v0.9 的 Agentic Resource Discovery（ARD）registry —— 爬取 ai-catalog.json、BM25 搜索、registry 之间的联邦，并通过 .well-known 自发布。已用官方 conformance CLI 验证。",
-      technologies: ["TypeScript", "Node.js", "BM25"],
+        "参与 [iFurySt](https://github.com/iFurySt) 的平台中立 Browser Use 项目 —— 面向 AI agent 的真实 Chrome 自动化，提供 CLI 与 JS / Python / Go SDK，基于 JSON-RPC 协议，无厂商锁定、极简上手。GitHub 170+ star。",
+      technologies: ["JavaScript", "CDP", "CLI", "SDK"],
       links: [
         {
           type: "Source",
-          href: "https://github.com/n1k0ver3E/ard-registry",
+          href: "https://github.com/iFurySt/open-browser-use",
           icon: <Icons.github className="size-3" />,
         },
       ],
@@ -220,17 +203,17 @@ export const DATA_ZH: AppData = {
       video: "",
     },
     {
-      title: "obsidian-image-uploader",
-      href: "https://github.com/n1k0ver3E/obsidian-image-uploader",
+      title: "HeyYo",
+      href: "https://github.com/iFurySt",
       dates: "2026",
       active: true,
       description:
-        "Obsidian 插件：自动把粘贴的图片上传到 GitHub 仓库，并把链接改写为永久的 jsDelivr CDN URL —— 让 vault 保持轻量，同时笔记依然可移植。",
-      technologies: ["TypeScript", "Obsidian API", "GitHub API"],
+        "与 [iFurySt](https://github.com/iFurySt) 合作的 macOS 原生语音输入 app：按下 Fn 即可在任何地方语音输入 —— 本地 Ogg/Opus 采集，Go 服务端并行调用 Gemini / Soniox / Deepgram / Fireworks ASR，再由 Gemini refine 输出最终文本。Windows 预览版进行中。",
+      technologies: ["SwiftUI", "Go", "ASR", "Gemini"],
       links: [
         {
-          type: "Source",
-          href: "https://github.com/n1k0ver3E/obsidian-image-uploader",
+          type: "GitHub",
+          href: "https://github.com/iFurySt",
           icon: <Icons.github className="size-3" />,
         },
       ],
