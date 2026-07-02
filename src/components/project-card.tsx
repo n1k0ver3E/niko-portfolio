@@ -2,6 +2,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { GitHubStars } from "@/components/github-stars-badge";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -39,6 +40,7 @@ interface Props {
     type: string;
     href: string;
   }[];
+  showStars?: boolean;
   className?: string;
 }
 
@@ -52,6 +54,7 @@ export function ProjectCard({
   image,
   video,
   links,
+  showStars,
   className,
 }: Props) {
   return (
@@ -98,6 +101,7 @@ export function ProjectCard({
                 >
                   {link.icon}
                   {link.type}
+                  {showStars && <GitHubStars href={link.href} />}
                 </Badge>
               </Link>
             ))}
@@ -153,6 +157,7 @@ export function ProjectCard({
                 >
                   {link.icon}
                   {link.type}
+                  {showStars && <GitHubStars href={link.href} />}
                 </Badge>
               </Link>
             ))}

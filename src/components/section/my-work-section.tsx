@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { GitHubCalendar } from "react-github-calendar";
 import { useTheme } from "next-themes";
@@ -21,8 +21,34 @@ export default function MyWorkSection() {
   const { t } = useData();
   const { resolvedTheme } = useTheme();
   const [account, setAccount] = useState<(typeof ACCOUNTS)[number]>(
-    ACCOUNTS[0]
+    ACCOUNTS[1]
   );
+  const calendarWrapRef = useRef<HTMLDivElement>(null);
+
+  // The calendar loads its data async; once it overflows, park the scroll
+  // position at the end so the most recent months are visible by default.
+  useEffect(() => {
+    const wrap = calendarWrapRef.current;
+    if (!wrap) return;
+    let tries = 0;
+    const id = setInterval(() => {
+      const scrollers = [
+        wrap.querySelector<HTMLElement>(
+          ".react-activity-calendar__scroll-container"
+        ),
+        wrap,
+      ];
+      for (const el of scrollers) {
+        if (el && el.scrollWidth > el.clientWidth) {
+          el.scrollLeft = el.scrollWidth;
+          clearInterval(id);
+          return;
+        }
+      }
+      if (++tries > 25) clearInterval(id);
+    }, 200);
+    return () => clearInterval(id);
+  }, [account]);
 
   return (
     <section id="my-work">
@@ -76,7 +102,7 @@ export default function MyWorkSection() {
               @{account.username}
             </Link>
           </div>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto" ref={calendarWrapRef}>
             <GitHubCalendar
               key={`${account.username}-${resolvedTheme}`}
               username={account.username}

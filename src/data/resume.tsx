@@ -88,6 +88,18 @@ export const DATA = {
         "Cookiy is a realtime user-research platform covering the full loop from research plan → recruitment → interview → report, built to let AI agents drive an entire study end to end. I built the realtime multimodal voice interview agent: a cascaded STT→LLM→TTS streaming pipeline with VAD, multilingual turn detection, barge-in and sub-second first response (~300ms LLM / 150–250ms TTFT), plus screen-share vision so the agent can watch and probe real user behavior. I designed the team's agent development harness (contracts frozen into a single CONTRACT.md with CI checks and drift audits — now the team standard) and a pluggable agent runtime built on one event loop and one unified event stream. I exposed the whole platform as 30 MCP tools that passed the official OpenAI Apps review, unified agent/CLI auth via RFC 8414/9728 OAuth discovery with compact tokens ~75% smaller than JWT, and routed 759K+ LLM calls through Cloudflare AI Gateway with ~86% prompt-cache hit rate. I also built the recruitment module from zero: supplier adapters (Prolific / CloudResearch / CINT), a composable screener engine, a concurrency-safe matching & billing engine (wallet dual-write, drift=0), and a guardrailed supplier-selection agent with deterministic fallback.",
     },
     {
+      company: "BoundlessAI",
+      href: "https://www.linkedin.com/in/niko-pang-4010a2135/",
+      badges: ["Co-Founder", "Part-time"],
+      location: "New Zealand · Remote",
+      title: "Co-Founder / AI Engineer",
+      logoUrl: "",
+      start: "Feb 2024",
+      end: "Jun 2024",
+      description:
+        "Co-founded a New Zealand AI startup as one of its part-time tech leads, alongside my Thoughtworks role. Spearheaded a RAG-powered AI bot product aimed at improving enterprise–client communication in traditional industries: designed, built and deployed the retrieval and generation stack in Python with LlamaIndex, set up the CI/CD pipelines, and built a prompt-evaluation pipeline to quantify how prompt variants affect product effectiveness. Departed when the company pivoted to a new business model, having laid the technical groundwork for its next phase.",
+    },
+    {
       company: "Thoughtworks",
       href: "https://www.thoughtworks.com",
       badges: [],
@@ -124,6 +136,7 @@ export const DATA = {
       href: "https://github.com/cookiy-ai/user-research-skill",
       dates: "2026 - Present",
       active: true,
+      showStars: true,
       description:
         "Cookiy's open-source skill that turns any coding agent — Claude Code, Codex, Cursor, OpenClaw — into an end-to-end user researcher: AI-moderated interviews, synthetic users, quant surveys, participant recruitment. **900+ stars on GitHub**, driving the platform through the MCP / CLI surface I own.",
       technologies: ["Claude Skills", "MCP", "CLI", "Shell"],
@@ -208,6 +221,7 @@ export const DATA = {
       href: "https://github.com/iFurySt/open-browser-use",
       dates: "2026",
       active: true,
+      showStars: true,
       description:
         "Contributor to [iFurySt](https://github.com/iFurySt)'s platform-neutral Browser Use for AI agents — real Chrome automation with a CLI plus JS / Python / Go SDKs over JSON-RPC, no lock-in, dead simple. 170+ stars on GitHub.",
       technologies: ["JavaScript", "CDP", "CLI", "SDK"],

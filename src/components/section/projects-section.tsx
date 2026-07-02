@@ -50,6 +50,7 @@ export default function ProjectsSection() {
                                 image={project.image}
                                 video={project.video}
                                 links={project.links}
+                                showStars={"showStars" in project ? project.showStars : undefined}
                             />
                         </BlurFade>
                     ))}

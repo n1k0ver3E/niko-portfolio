@@ -69,6 +69,18 @@ export const DATA_ZH: AppData = {
         "Cookiy 是一个覆盖「研究计划 → 招募 → 访谈 → 报告」完整闭环的实时用户调研平台，目标是让 AI agent 端到端地驱动整个研究流程。我构建了实时多模态语音访谈 agent：级联 STT→LLM→TTS 流式管线，带 VAD、多语言 turn detection、barge-in 与低于一秒的首次响应（LLM ~300ms / TTS TTFT 150–250ms），并支持屏幕共享视觉，让 agent 能实时观察并追问用户的真实操作。我设计了团队的 agent 开发 harness（契约冻结进单一 CONTRACT.md，配 CI 校验与 drift 审计，现已是团队标准），以及基于单一事件循环 + 统一事件流的可插拔 agent runtime。我把整个平台封装为 30 个 MCP tools 并通过 OpenAI Apps 官方审核；用 RFC 8414/9728 OAuth discovery 统一了 agent / CLI 鉴权，compact token 比 JWT 小约 75%；759K+ 次 LLM 调用经 Cloudflare AI Gateway 路由，prompt-cache 命中率约 86%。招募模块由我从零搭建：supplier adapter（Prolific / CloudResearch / CINT）、可组合的甄别（screener）引擎、并发安全的匹配与计费引擎（钱包双写，drift=0），以及带确定性兜底、加了 guardrail 的 supplier-selection agent。",
     },
     {
+      company: "BoundlessAI",
+      href: "https://www.linkedin.com/in/niko-pang-4010a2135/",
+      badges: ["联合创始人", "Part-time"],
+      location: "新西兰 · 远程",
+      title: "联合创始人 / AI 工程师",
+      logoUrl: "",
+      start: "Feb 2024",
+      end: "Jun 2024",
+      description:
+        "在 Thoughtworks 任职期间，以 part-time 技术负责人之一的身份联合创立了这家新西兰 AI 创业公司。主导基于 RAG 的 AI bot 产品，服务传统行业的企业-客户沟通场景：用 Python + LlamaIndex 设计并落地检索与生成链路，搭建 CI/CD 流水线，并构建 prompt 评测流水线来量化不同 prompt 对产品效果的影响。公司转向新商业模式后退出，为其下一阶段发展打好了技术底座。",
+    },
+    {
       company: "Thoughtworks（思特沃克）",
       href: "https://www.thoughtworks.com",
       badges: [],
@@ -105,6 +117,7 @@ export const DATA_ZH: AppData = {
       href: "https://github.com/cookiy-ai/user-research-skill",
       dates: "2026 - Present",
       active: true,
+      showStars: true,
       description:
         "Cookiy 的开源 skill：让任意 coding agent —— Claude Code、Codex、Cursor、OpenClaw —— 变成端到端的用户研究员：AI 主持访谈、合成用户、量化问卷、参与者招募。**GitHub 900+ star**，底层跑在我负责的 MCP / CLI 接入面上。",
       technologies: ["Claude Skills", "MCP", "CLI", "Shell"],
@@ -189,6 +202,7 @@ export const DATA_ZH: AppData = {
       href: "https://github.com/iFurySt/open-browser-use",
       dates: "2026",
       active: true,
+      showStars: true,
       description:
         "参与 [iFurySt](https://github.com/iFurySt) 的平台中立 Browser Use 项目 —— 面向 AI agent 的真实 Chrome 自动化，提供 CLI 与 JS / Python / Go SDK，基于 JSON-RPC 协议，无厂商锁定、极简上手。GitHub 170+ star。",
       technologies: ["JavaScript", "CDP", "CLI", "SDK"],
