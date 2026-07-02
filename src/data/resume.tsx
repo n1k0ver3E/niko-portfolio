@@ -1,0 +1,253 @@
+import { Icons } from "@/components/icons";
+import { HomeIcon, NotebookIcon } from "lucide-react";
+import { ReactLight } from "@/components/ui/svgs/reactLight";
+import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
+import { Typescript } from "@/components/ui/svgs/typescript";
+import { Nodejs } from "@/components/ui/svgs/nodejs";
+import { Python } from "@/components/ui/svgs/python";
+import { Postgresql } from "@/components/ui/svgs/postgresql";
+import { Docker } from "@/components/ui/svgs/docker";
+
+export const DATA = {
+  name: "Niko Pang",
+  initials: "NP",
+  url: "https://www.nikopang.com",
+  location: "Remote", // TODO: confirm location to display
+  locationLink: "",
+  description:
+    "Full-stack engineer building agent platforms — realtime voice agents, agent harnesses, and the infrastructure that lets AI drive real products.",
+  summary:
+    "I'm a founding team member at [Cookiy AI](https://www.cookiy.ai), a realtime user-research platform (funded at eight figures USD, 50k+ respondents and 700+ studies in production). I built the realtime multimodal voice interview agent (cascaded STT→LLM→TTS streaming with sub-second first response), designed a pluggable agent runtime harness from scratch — one event loop, one event stream, no LangChain — shipped the platform's MCP server through the official OpenAI Apps review, and owned the recruitment module from zero to production. I co-authored [AOI](https://arxiv.org/abs/2603.03378) (arXiv 2026), a multi-agent framework for autonomous cloud diagnosis. I write about agents and engineering on [my blog](https://niko-pang.vercel.app), and keep open-source work on [GitHub](https://github.com/n1k0ver3E) (day-job account: [Pn1ko](https://github.com/Pn1ko), 215+ merged PRs in private repos).",
+  avatarUrl: "https://avatars.githubusercontent.com/u/14194564?v=4",
+  skills: [
+    { name: "TypeScript", icon: Typescript },
+    { name: "Node.js", icon: Nodejs },
+    { name: "NestJS", icon: undefined },
+    { name: "React", icon: ReactLight },
+    { name: "Next.js", icon: NextjsIconDark },
+    { name: "Python", icon: Python },
+    { name: "PostgreSQL", icon: Postgresql },
+    { name: "Prisma", icon: undefined },
+    { name: "Redis", icon: undefined },
+    { name: "LiveKit", icon: undefined },
+    { name: "MCP", icon: undefined },
+    { name: "Docker", icon: Docker },
+    { name: "GCP / AWS", icon: undefined },
+  ],
+  navbar: [
+    { href: "/", icon: HomeIcon, label: "Home" },
+    {
+      href: "https://niko-pang.vercel.app",
+      icon: NotebookIcon,
+      label: "Blog",
+    },
+  ],
+  contact: {
+    email: "niko.pang96@gmail.com",
+    tel: "",
+    social: {
+      GitHub: {
+        name: "GitHub",
+        url: "https://github.com/n1k0ver3E",
+        icon: Icons.github,
+        navbar: true,
+      },
+      GitHubWork: {
+        name: "GitHub (Cookiy)",
+        url: "https://github.com/Pn1ko",
+        icon: Icons.github,
+        navbar: true,
+      },
+      X: {
+        name: "X",
+        url: "https://x.com/n1k0ver3_",
+        icon: Icons.x,
+        navbar: true,
+      },
+      Blog: {
+        name: "Blog",
+        url: "https://niko-pang.vercel.app",
+        icon: Icons.globe,
+        navbar: true,
+      },
+      email: {
+        name: "Send Email",
+        url: "mailto:niko.pang96@gmail.com",
+        icon: Icons.email,
+        navbar: false,
+      },
+    },
+  },
+
+  work: [
+    {
+      company: "Cookiy AI",
+      href: "https://www.cookiy.ai",
+      badges: ["Founding Team"],
+      location: "Remote",
+      title: "Founding Engineer · Full-Stack / Agent Platform",
+      logoUrl: "",
+      start: "Oct 2025",
+      end: "Present",
+      description:
+        "Cookiy is a realtime user-research platform covering the full loop from research plan → recruitment → interview → report, built to let AI agents drive an entire study end to end. I built the realtime multimodal voice interview agent: a cascaded STT→LLM→TTS streaming pipeline with VAD, multilingual turn detection, barge-in and sub-second first response (~300ms LLM / 150–250ms TTFT), plus screen-share vision so the agent can watch and probe real user behavior. I designed the team's agent development harness (contracts frozen into a single CONTRACT.md with CI checks and drift audits — now the team standard) and a pluggable agent runtime built on one event loop and one unified event stream. I exposed the whole platform as 30 MCP tools that passed the official OpenAI Apps review, unified agent/CLI auth via RFC 8414/9728 OAuth discovery with compact tokens ~75% smaller than JWT, and routed 759K+ LLM calls through Cloudflare AI Gateway with ~86% prompt-cache hit rate. I also built the recruitment module from zero: supplier adapters (Prolific / CloudResearch / CINT), a composable screener engine, a concurrency-safe matching & billing engine (wallet dual-write, drift=0), and a guardrailed supplier-selection agent with deterministic fallback.",
+    },
+    // TODO: add pre-Cookiy employers (dates + roles) — not derivable from git history
+  ],
+  education: [
+    {
+      school: "University of New South Wales (UNSW)",
+      href: "https://www.unsw.edu.au",
+      // TODO: confirm exact degree name and years
+      degree: "Master's degree, Information Technology",
+      logoUrl: "",
+      start: "2019",
+      end: "2021",
+    },
+  ],
+  projects: [
+    {
+      title: "Realtime Voice Interview Agent",
+      href: "https://www.cookiy.ai",
+      dates: "2025 - Present",
+      active: true,
+      description:
+        "Production voice agent that runs full user-research interviews. Cascaded STT→LLM→TTS streaming with dynamic TTS chunking, VAD + multilingual turn detection, barge-in and silence recovery — end-to-end first response under one second. Screen-share vision lets the agent watch, pause capture, and probe on-screen behavior in realtime.",
+      technologies: [
+        "Python",
+        "LiveKit Agents",
+        "GCP Cloud Run",
+        "ffmpeg",
+        "WebRTC",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.cookiy.ai",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Agent Runtime Harness & cookiy-agent",
+      href: "https://github.com/Pn1ko",
+      dates: "2026 - Present",
+      active: true,
+      description:
+        "A pluggable agent runtime built from scratch — single event loop (AgentLoop), unified event stream (AgentEvent), and three swappable contracts (Tool / LlmProvider / SessionStore); no LangChain. On top of it: a Slack-native research agent that parses natural language into tool calls via Gemini function-calling and executes them inside ephemeral E2B sandboxes, with webhook-driven session resume for long tasks.",
+      technologies: ["TypeScript", "Gemini", "E2B", "Slack", "MCP"],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/Pn1ko",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Cookiy MCP Server & LLM Gateway",
+      href: "https://www.cookiy.ai",
+      dates: "2026 - Present",
+      active: true,
+      description:
+        "Wrapped the entire SaaS as an agent-callable MCP server: 30 decorator-registered tools over SSE / StreamableHTTP / stdio, approved through the official OpenAI Apps review. Unified agent & CLI auth with RFC 8414/9728 OAuth discovery and stateless compact tokens (~75% smaller than JWT). All LLM traffic governed through Cloudflare AI Gateway: multi-model routing, rate limiting, cost observability, ~86% prompt-cache hit across 759K+ calls.",
+      technologies: [
+        "NestJS",
+        "MCP",
+        "OAuth 2.1",
+        "Cloudflare AI Gateway",
+        "TypeScript",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.cookiy.ai",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Recruit Platform (0→1)",
+      href: "https://www.cookiy.ai",
+      dates: "2025 - Present",
+      active: true,
+      description:
+        "Built Cookiy's participant-recruitment vertical solo: adapter + runtime-registry pattern normalizing Prolific / CloudResearch / CINT into one domain model (new supplier ≈ one adapter), a composable screener engine (piped questions, min-selections, 3-state screen-in), and a concurrency-safe matching & billing engine — DB transactions, conditional atomic updates, idempotent wallet dual-write with drift=0. 50k+ respondents and 700+ studies served in production.",
+      technologies: ["NestJS", "Prisma", "PostgreSQL", "Redis", "React"],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.cookiy.ai",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "ard-registry",
+      href: "https://github.com/n1k0ver3E/ard-registry",
+      dates: "2026",
+      active: true,
+      description:
+        "An ard-spec v0.9 conformant Agentic Resource Discovery (ARD) registry in TypeScript — crawls ai-catalog.json, BM25 search, federation between registries, self-publishes via .well-known. Verified with the official conformance CLI.",
+      technologies: ["TypeScript", "Node.js", "BM25"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/n1k0ver3E/ard-registry",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "obsidian-image-uploader",
+      href: "https://github.com/n1k0ver3E/obsidian-image-uploader",
+      dates: "2026",
+      active: true,
+      description:
+        "Obsidian plugin that auto-uploads pasted images to a GitHub repo and rewrites links to permanent jsDelivr CDN URLs — keeping vaults lightweight while notes stay portable.",
+      technologies: ["TypeScript", "Obsidian API", "GitHub API"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/n1k0ver3E/obsidian-image-uploader",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+  ],
+  hackathons: [
+    {
+      title:
+        "AOI: Turning Failed Trajectories into Training Signals for Autonomous Cloud Diagnosis",
+      dates: "March 2026",
+      location: "arXiv preprint · cs.LG / cs.AI",
+      description:
+        "Co-authored a multi-agent framework for automating SRE diagnosis with LLMs: distills expert knowledge into open-source models via GRPO, isolates execution behind a read-write separated architecture, and converts failed operation attempts into training signals — 66.3% success on benchmark tasks, with failure analysis alone contributing +4.8pp.",
+      image: "",
+      links: [
+        {
+          title: "arXiv",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://arxiv.org/abs/2603.03378",
+        },
+        {
+          title: "PDF",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://arxiv.org/pdf/2603.03378",
+        },
+      ],
+    },
+  ],
+} as const;
