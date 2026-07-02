@@ -52,8 +52,8 @@ export default function WorkSection() {
                       <ChevronRight
                         className={cn(
                           "absolute h-3.5 w-3.5 shrink-0 text-muted-foreground stroke-2 transition-all duration-300 ease-out",
-                          "translate-x-0 opacity-0",
-                          "group-hover:translate-x-1 group-hover:opacity-100",
+                          "translate-x-0 opacity-100",
+                          "group-hover:translate-x-1",
                           "group-data-[state=open]:opacity-0 group-data-[state=open]:translate-x-0"
                         )}
                       />
@@ -69,6 +69,11 @@ export default function WorkSection() {
                   <div className="font-sans text-sm text-muted-foreground">
                     {work.title}
                   </div>
+                  {work.tagline && (
+                    <div className="font-sans text-xs text-muted-foreground/75 mt-0.5 truncate group-data-[state=open]:whitespace-normal">
+                      {work.tagline}
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">

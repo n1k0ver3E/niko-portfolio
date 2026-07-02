@@ -84,6 +84,8 @@ export const DATA = {
       logoUrl: "/logos/cookiy.png",
       start: "Oct 2025",
       end: "Present",
+      tagline:
+        "Built the realtime voice interview agent, the team's agent harness, the MCP / CLI access layer, and the recruitment vertical — from zero.",
       description:
         "Cookiy is a realtime user-research platform covering the full loop from research plan → recruitment → interview → report, built to let AI agents drive an entire study end to end. I built the realtime multimodal voice interview agent: a cascaded STT→LLM→TTS streaming pipeline with VAD, multilingual turn detection, barge-in and sub-second first response (~300ms LLM / 150–250ms TTFT), plus screen-share vision so the agent can watch and probe real user behavior. I designed the team's agent development harness (contracts frozen into a single CONTRACT.md with CI checks and drift audits — now the team standard) and a pluggable agent runtime built on one event loop and one unified event stream. I exposed the whole platform as 30 MCP tools that passed the official OpenAI Apps review, unified agent/CLI auth via RFC 8414/9728 OAuth discovery with compact tokens ~75% smaller than JWT, and routed 759K+ LLM calls through Cloudflare AI Gateway with ~86% prompt-cache hit rate. I also built the recruitment module from zero: supplier adapters (Prolific / CloudResearch / CINT), a composable screener engine, a concurrency-safe matching & billing engine (wallet dual-write, drift=0), and a guardrailed supplier-selection agent with deterministic fallback.",
     },
@@ -96,6 +98,8 @@ export const DATA = {
       logoUrl: "",
       start: "Feb 2024",
       end: "Jun 2024",
+      tagline:
+        "Part-time co-founder — shipped a RAG-powered enterprise communication bot with Python + LlamaIndex.",
       description:
         "Co-founded a New Zealand AI startup as one of its part-time tech leads, alongside my Thoughtworks role. Spearheaded a RAG-powered AI bot product aimed at improving enterprise–client communication in traditional industries: designed, built and deployed the retrieval and generation stack in Python with LlamaIndex, set up the CI/CD pipelines, and built a prompt-evaluation pipeline to quantify how prompt variants affect product effectiveness. Departed when the company pivoted to a new business model, having laid the technical groundwork for its next phase.",
     },
@@ -108,6 +112,8 @@ export const DATA = {
       logoUrl: "/logos/thoughtworks.png",
       start: "May 2022",
       end: "Sep 2025",
+      tagline:
+        "Enterprise consulting across backend and AI — a 90%+ accuracy RAG PoC and a multi-tenant streaming metadata platform.",
       description:
         "Enterprise consulting across backend architecture and AI applications, owning features end to end from requirement clarification to production. Built a small-sample RAG customer-support agent PoC on ~10k words of Chinese FAQ (no room for fine-tuning): systematically evaluated Chinese embedding models (m3e / text2vec / E5) for a ~20% precision gain, added BM25 + cross-encoder reranking, built a HyDE-style query store for dual-path retrieval, and set up a reusable RAGAS evaluation pipeline — 90%+ answer accuracy in open testing. Re-architected an Australian streaming platform's metadata backend: Java 21 + Spring Boot + Orkes Conductor video-processing workflows, GitOps delivery with Kubernetes / ArgoCD / Terraform, Kafka + Elasticsearch event-driven monitoring on AWS, and a unified multi-tenant metadata layer for VOD + Live — new business lines onboard within a week, processing efficiency up ~40%, launch cycles cut from hours to tens of minutes.",
     },
