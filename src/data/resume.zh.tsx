@@ -1,0 +1,232 @@
+import { Icons } from "@/components/icons";
+import { HomeIcon, NotebookIcon } from "lucide-react";
+import { DATA } from "./resume";
+import type { AppData } from "./types";
+
+export const DATA_ZH: AppData = {
+  name: "Niko Pang",
+  initials: "NP",
+  url: "https://www.nikopang.com",
+  location: "远程",
+  locationLink: "",
+  description:
+    "全栈工程师，专注 agent 平台 —— 实时语音 agent、agent harness，以及让 AI 驱动真实产品的基础设施。",
+  summary:
+    "我是 [Cookiy AI](https://www.cookiy.ai) 的创始团队成员。Cookiy 是一个实时用户调研平台（融资额八位数美元，生产环境累计服务 50k+ 受访者、700+ 研究项目）。我构建了实时多模态语音访谈 agent（级联 STT→LLM→TTS 流式管线，首次响应低于一秒），从零设计了可插拔的 agent runtime harness —— 一个事件循环、一条事件流，不依赖 LangChain；平台的 MCP server 由我负责并通过了 OpenAI Apps 官方审核，招募模块也是我从 0 到 1 独立做上线的。我与人合著了 [AOI](https://arxiv.org/abs/2603.03378)（arXiv 2026），一个面向云端自主诊断的多 agent 框架。平时我在[博客](https://niko-pang.vercel.app)上写 agent 与工程相关的内容，开源作品在 [GitHub](https://github.com/n1k0ver3E)（工作账号 [Pn1ko](https://github.com/Pn1ko)，私有仓库 215+ 个已合并 PR）。",
+  avatarUrl: "https://avatars.githubusercontent.com/u/14194564?v=4",
+  skills: DATA.skills,
+  navbar: [
+    { href: "/", icon: HomeIcon, label: "首页" },
+    {
+      href: "https://niko-pang.vercel.app",
+      icon: NotebookIcon,
+      label: "博客",
+    },
+  ],
+  contact: {
+    email: "niko.pang96@gmail.com",
+    tel: "",
+    social: {
+      GitHub: {
+        name: "GitHub",
+        url: "https://github.com/n1k0ver3E",
+        icon: Icons.github,
+        navbar: true,
+      },
+      GitHubWork: {
+        name: "GitHub（Cookiy）",
+        url: "https://github.com/Pn1ko",
+        icon: Icons.github,
+        navbar: true,
+      },
+      X: {
+        name: "X",
+        url: "https://x.com/n1k0ver3_",
+        icon: Icons.x,
+        navbar: true,
+      },
+      Blog: {
+        name: "博客",
+        url: "https://niko-pang.vercel.app",
+        icon: Icons.globe,
+        navbar: true,
+      },
+      email: {
+        name: "发邮件",
+        url: "mailto:niko.pang96@gmail.com",
+        icon: Icons.email,
+        navbar: false,
+      },
+    },
+  },
+
+  work: [
+    {
+      company: "Cookiy AI",
+      href: "https://www.cookiy.ai",
+      badges: ["创始团队"],
+      location: "远程",
+      title: "创始工程师 · 全栈 / Agent 平台",
+      logoUrl: "",
+      start: "Oct 2025",
+      end: "Present",
+      description:
+        "Cookiy 是一个覆盖「研究计划 → 招募 → 访谈 → 报告」完整闭环的实时用户调研平台，目标是让 AI agent 端到端地驱动整个研究流程。我构建了实时多模态语音访谈 agent：级联 STT→LLM→TTS 流式管线，带 VAD、多语言 turn detection、barge-in 与低于一秒的首次响应（LLM ~300ms / TTS TTFT 150–250ms），并支持屏幕共享视觉，让 agent 能实时观察并追问用户的真实操作。我设计了团队的 agent 开发 harness（契约冻结进单一 CONTRACT.md，配 CI 校验与 drift 审计，现已是团队标准），以及基于单一事件循环 + 统一事件流的可插拔 agent runtime。我把整个平台封装为 30 个 MCP tools 并通过 OpenAI Apps 官方审核；用 RFC 8414/9728 OAuth discovery 统一了 agent / CLI 鉴权，compact token 比 JWT 小约 75%；759K+ 次 LLM 调用经 Cloudflare AI Gateway 路由，prompt-cache 命中率约 86%。招募模块由我从零搭建：supplier adapter（Prolific / CloudResearch / CINT）、可组合的甄别（screener）引擎、并发安全的匹配与计费引擎（钱包双写，drift=0），以及带确定性兜底、加了 guardrail 的 supplier-selection agent。",
+    },
+  ],
+  education: [
+    {
+      school: "University of New South Wales (UNSW)",
+      href: "https://www.unsw.edu.au",
+      degree: "信息技术硕士（Master of Information Technology）",
+      logoUrl: "",
+      start: "2019",
+      end: "2021",
+    },
+  ],
+  projects: [
+    {
+      title: "Realtime Voice Interview Agent",
+      href: "https://www.cookiy.ai",
+      dates: "2025 - Present",
+      active: true,
+      description:
+        "在生产环境中独立完成整场用户访谈的语音 agent。级联 STT→LLM→TTS 流式管线，配合动态 TTS 分块、VAD + 多语言 turn detection、barge-in 与静默恢复 —— 端到端首次响应低于一秒。屏幕共享视觉能力让 agent 可以实时观看、暂停采集，并针对用户屏幕上的行为深入追问。",
+      technologies: [
+        "Python",
+        "LiveKit Agents",
+        "GCP Cloud Run",
+        "ffmpeg",
+        "WebRTC",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.cookiy.ai",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Agent Runtime Harness & cookiy-agent",
+      href: "https://github.com/Pn1ko",
+      dates: "2026 - Present",
+      active: true,
+      description:
+        "从零构建的可插拔 agent runtime —— 单一事件循环（AgentLoop）、统一事件流（AgentEvent），以及三个可替换契约（Tool / LlmProvider / SessionStore），不依赖 LangChain。在此之上构建了 Slack 原生的调研 agent：通过 Gemini function-calling 把自然语言解析为工具调用，在临时的 E2B 沙箱中执行，并用 webhook 驱动的会话恢复来支撑长任务。",
+      technologies: ["TypeScript", "Gemini", "E2B", "Slack", "MCP"],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/Pn1ko",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Cookiy MCP Server & LLM Gateway",
+      href: "https://www.cookiy.ai",
+      dates: "2026 - Present",
+      active: true,
+      description:
+        "把整个 SaaS 封装为 agent 可调用的 MCP server：30 个通过装饰器注册的工具，支持 SSE / StreamableHTTP / stdio，并通过了 OpenAI Apps 官方审核。用 RFC 8414/9728 OAuth discovery 统一 agent 与 CLI 鉴权，无状态 compact token 比 JWT 小约 75%。全部 LLM 流量经 Cloudflare AI Gateway 治理：多模型路由、限流、成本可观测，759K+ 次调用的 prompt-cache 命中率约 86%。",
+      technologies: [
+        "NestJS",
+        "MCP",
+        "OAuth 2.1",
+        "Cloudflare AI Gateway",
+        "TypeScript",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.cookiy.ai",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Recruit Platform (0→1)",
+      href: "https://www.cookiy.ai",
+      dates: "2025 - Present",
+      active: true,
+      description:
+        "独立从零搭建 Cookiy 的参与者招募业务线：用 adapter + 运行时注册表模式把 Prolific / CloudResearch / CINT 归一到同一个领域模型（接入新 supplier ≈ 写一个 adapter）；可组合的甄别（screener）引擎（piped questions、min-selections、三态 screen-in）；以及并发安全的匹配与计费引擎 —— 数据库事务、条件原子更新、幂等的钱包双写（drift=0）。生产环境已服务 50k+ 受访者、700+ 研究项目。",
+      technologies: ["NestJS", "Prisma", "PostgreSQL", "Redis", "React"],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.cookiy.ai",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "ard-registry",
+      href: "https://github.com/n1k0ver3E/ard-registry",
+      dates: "2026",
+      active: true,
+      description:
+        "用 TypeScript 实现、符合 ard-spec v0.9 的 Agentic Resource Discovery（ARD）registry —— 爬取 ai-catalog.json、BM25 搜索、registry 之间的联邦，并通过 .well-known 自发布。已用官方 conformance CLI 验证。",
+      technologies: ["TypeScript", "Node.js", "BM25"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/n1k0ver3E/ard-registry",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "obsidian-image-uploader",
+      href: "https://github.com/n1k0ver3E/obsidian-image-uploader",
+      dates: "2026",
+      active: true,
+      description:
+        "Obsidian 插件：自动把粘贴的图片上传到 GitHub 仓库，并把链接改写为永久的 jsDelivr CDN URL —— 让 vault 保持轻量，同时笔记依然可移植。",
+      technologies: ["TypeScript", "Obsidian API", "GitHub API"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/n1k0ver3E/obsidian-image-uploader",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+  ],
+  hackathons: [
+    {
+      title:
+        "AOI: Turning Failed Trajectories into Training Signals for Autonomous Cloud Diagnosis",
+      dates: "March 2026",
+      location: "arXiv preprint · cs.LG / cs.AI",
+      description:
+        "与人合著的多 agent 框架，用 LLM 自动化 SRE 诊断：通过 GRPO 把专家知识蒸馏进开源模型，用读写分离的架构隔离执行，并把失败的操作尝试转化为训练信号 —— 基准任务成功率 66.3%，其中仅失败分析一项就贡献了 +4.8pp。",
+      image: "",
+      links: [
+        {
+          title: "arXiv",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://arxiv.org/abs/2603.03378",
+        },
+        {
+          title: "PDF",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://arxiv.org/pdf/2603.03378",
+        },
+      ],
+    },
+  ],
+};
