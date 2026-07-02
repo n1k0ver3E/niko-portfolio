@@ -12,12 +12,13 @@ export const DATA = {
   name: "Niko Pang",
   initials: "NP",
   url: "https://www.nikopang.com",
-  location: "Remote", // TODO: confirm location to display
-  locationLink: "",
+  location: "Tianjin, China",
+  locationLink: "https://www.google.com/maps/place/tianjin",
   description:
     "Full-stack engineer building agent platforms — realtime voice agents, agent harnesses, and the infrastructure that lets AI drive real products.",
   summary:
-    "I'm a founding team member at [Cookiy AI](https://www.cookiy.ai), a realtime user-research platform (funded at eight figures USD, 50k+ respondents and 700+ studies in production). I built the realtime multimodal voice interview agent (cascaded STT→LLM→TTS streaming with sub-second first response), designed a pluggable agent runtime harness from scratch — one event loop, one event stream, no LangChain — shipped the platform's MCP server through the official OpenAI Apps review, and owned the recruitment module from zero to production. I co-authored [AOI](https://arxiv.org/abs/2603.03378) (arXiv 2026), a multi-agent framework for autonomous cloud diagnosis. I write about agents and engineering on [my blog](https://niko-pang.vercel.app), and keep open-source work on [GitHub](https://github.com/n1k0ver3E) (day-job account: [Pn1ko](https://github.com/Pn1ko), 215+ merged PRs in private repos).",
+    "I'm a founding team member at [Cookiy AI](https://www.cookiy.ai), a realtime user-research platform (funded at eight figures USD, 50k+ respondents and 700+ studies in production). " +
+    "I co-authored [AOI](https://arxiv.org/abs/2603.03378) (arXiv 2026), a multi-agent framework for autonomous cloud diagnosis. ",
   avatarUrl: "https://avatars.githubusercontent.com/u/14194564?v=4",
   skills: [
     { name: "TypeScript", icon: Typescript },
@@ -52,7 +53,7 @@ export const DATA = {
         icon: Icons.github,
         navbar: true,
       },
-      GitHubWork: {
+      GitWork: {
         name: "GitHub (Cookiy)",
         url: "https://github.com/Pn1ko",
         icon: Icons.github,
@@ -64,17 +65,11 @@ export const DATA = {
         icon: Icons.x,
         navbar: true,
       },
-      Blog: {
-        name: "Blog",
-        url: "https://niko-pang.vercel.app",
-        icon: Icons.globe,
-        navbar: true,
-      },
       email: {
         name: "Send Email",
         url: "mailto:niko.pang96@gmail.com",
         icon: Icons.email,
-        navbar: false,
+        navbar: true,
       },
     },
   },
@@ -84,25 +79,43 @@ export const DATA = {
       company: "Cookiy AI",
       href: "https://www.cookiy.ai",
       badges: ["Founding Team"],
-      location: "Remote",
+      location: "Palo Alto, CA",
       title: "Founding Engineer · Full-Stack / Agent Platform",
-      logoUrl: "",
+      logoUrl: "/logos/cookiy.png",
       start: "Oct 2025",
       end: "Present",
       description:
         "Cookiy is a realtime user-research platform covering the full loop from research plan → recruitment → interview → report, built to let AI agents drive an entire study end to end. I built the realtime multimodal voice interview agent: a cascaded STT→LLM→TTS streaming pipeline with VAD, multilingual turn detection, barge-in and sub-second first response (~300ms LLM / 150–250ms TTFT), plus screen-share vision so the agent can watch and probe real user behavior. I designed the team's agent development harness (contracts frozen into a single CONTRACT.md with CI checks and drift audits — now the team standard) and a pluggable agent runtime built on one event loop and one unified event stream. I exposed the whole platform as 30 MCP tools that passed the official OpenAI Apps review, unified agent/CLI auth via RFC 8414/9728 OAuth discovery with compact tokens ~75% smaller than JWT, and routed 759K+ LLM calls through Cloudflare AI Gateway with ~86% prompt-cache hit rate. I also built the recruitment module from zero: supplier adapters (Prolific / CloudResearch / CINT), a composable screener engine, a concurrency-safe matching & billing engine (wallet dual-write, drift=0), and a guardrailed supplier-selection agent with deterministic fallback.",
     },
-    // TODO: add pre-Cookiy employers (dates + roles) — not derivable from git history
+    {
+      company: "Thoughtworks",
+      href: "https://www.thoughtworks.com",
+      badges: [],
+      location: "China",
+      title: "Software Engineer · Consultant",
+      logoUrl: "/logos/thoughtworks.png",
+      start: "May 2022",
+      end: "Sep 2025",
+      description:
+        "Enterprise consulting across backend architecture and AI applications, owning features end to end from requirement clarification to production. Built a small-sample RAG customer-support agent PoC on ~10k words of Chinese FAQ (no room for fine-tuning): systematically evaluated Chinese embedding models (m3e / text2vec / E5) for a ~20% precision gain, added BM25 + cross-encoder reranking, built a HyDE-style query store for dual-path retrieval, and set up a reusable RAGAS evaluation pipeline — 90%+ answer accuracy in open testing. Re-architected an Australian streaming platform's metadata backend: Java 21 + Spring Boot + Orkes Conductor video-processing workflows, GitOps delivery with Kubernetes / ArgoCD / Terraform, Kafka + Elasticsearch event-driven monitoring on AWS, and a unified multi-tenant metadata layer for VOD + Live — new business lines onboard within a week, processing efficiency up ~40%, launch cycles cut from hours to tens of minutes.",
+    },
   ],
   education: [
     {
       school: "University of New South Wales (UNSW)",
       href: "https://www.unsw.edu.au",
-      // TODO: confirm exact degree name and years
-      degree: "Master's degree, Information Technology",
-      logoUrl: "",
+      degree: "M.S. in Computer Science (Data Science)",
+      logoUrl: "/logos/unsw.png",
       start: "2019",
-      end: "2021",
+      end: "2022",
+    },
+    {
+      school: "Jimei University",
+      href: "https://www.jmu.edu.cn",
+      degree: "B.Eng. in Network Engineering",
+      logoUrl: "",
+      start: "2014",
+      end: "2018",
     },
   ],
   projects: [
@@ -191,6 +204,24 @@ export const DATA = {
       video: "",
     },
     {
+      title: "Claude Code Usage Dashboard",
+      href: "https://usage.nikopang.com",
+      dates: "2026",
+      active: true,
+      description:
+        "I'm a heavy user of AI coding tools — this dashboard makes it measurable. A GitHub Actions pipeline auto-syncs my daily Claude Code token usage to a public page: ~2B tokens and $1.6k+ API-equivalent cost in a single month, broken down by input/output/cache and per-day cost.",
+      technologies: ["GitHub Actions", "TypeScript", "Automation"],
+      links: [
+        {
+          type: "Website",
+          href: "https://usage.nikopang.com",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/projects/token-usage.png",
+      video: "",
+    },
+    {
       title: "ard-registry",
       href: "https://github.com/n1k0ver3E/ard-registry",
       dates: "2026",
@@ -232,7 +263,7 @@ export const DATA = {
       title:
         "AOI: Turning Failed Trajectories into Training Signals for Autonomous Cloud Diagnosis",
       dates: "March 2026",
-      location: "arXiv preprint · cs.LG / cs.AI",
+      location: "Under review at SIGKDD 2026 · arXiv preprint · cs.LG / cs.AI",
       description:
         "Co-authored a multi-agent framework for automating SRE diagnosis with LLMs: distills expert knowledge into open-source models via GRPO, isolates execution behind a read-write separated architecture, and converts failed operation attempts into training signals — 66.3% success on benchmark tasks, with failure analysis alone contributing +4.8pp.",
       image: "",

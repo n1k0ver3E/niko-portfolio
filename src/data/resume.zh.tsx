@@ -7,12 +7,12 @@ export const DATA_ZH: AppData = {
   name: "Niko Pang",
   initials: "NP",
   url: "https://www.nikopang.com",
-  location: "远程",
-  locationLink: "",
+  location: "中国 · 天津",
+  locationLink: "https://www.google.com/maps/place/tianjin",
   description:
     "全栈工程师，专注 agent 平台 —— 实时语音 agent、agent harness，以及让 AI 驱动真实产品的基础设施。",
   summary:
-    "我是 [Cookiy AI](https://www.cookiy.ai) 的创始团队成员。Cookiy 是一个实时用户调研平台（融资额八位数美元，生产环境累计服务 50k+ 受访者、700+ 研究项目）。我构建了实时多模态语音访谈 agent（级联 STT→LLM→TTS 流式管线，首次响应低于一秒），从零设计了可插拔的 agent runtime harness —— 一个事件循环、一条事件流，不依赖 LangChain；平台的 MCP server 由我负责并通过了 OpenAI Apps 官方审核，招募模块也是我从 0 到 1 独立做上线的。我与人合著了 [AOI](https://arxiv.org/abs/2603.03378)（arXiv 2026），一个面向云端自主诊断的多 agent 框架。平时我在[博客](https://niko-pang.vercel.app)上写 agent 与工程相关的内容，开源作品在 [GitHub](https://github.com/n1k0ver3E)（工作账号 [Pn1ko](https://github.com/Pn1ko)，私有仓库 215+ 个已合并 PR）。",
+    "我是 [Cookiy AI](https://www.cookiy.ai) 的创始团队成员。Cookiy 是一个实时用户调研平台（融资额八位数美元，生产环境累计服务 50k+ 受访者、700+ 研究项目）。我与人合著了 [AOI](https://arxiv.org/abs/2603.03378)（arXiv 2026），一个面向云端自主诊断的多 agent 框架。",
   avatarUrl: "https://avatars.githubusercontent.com/u/14194564?v=4",
   skills: DATA.skills,
   navbar: [
@@ -33,7 +33,7 @@ export const DATA_ZH: AppData = {
         icon: Icons.github,
         navbar: true,
       },
-      GitHubWork: {
+      GitWork: {
         name: "GitHub（Cookiy）",
         url: "https://github.com/Pn1ko",
         icon: Icons.github,
@@ -45,17 +45,11 @@ export const DATA_ZH: AppData = {
         icon: Icons.x,
         navbar: true,
       },
-      Blog: {
-        name: "博客",
-        url: "https://niko-pang.vercel.app",
-        icon: Icons.globe,
-        navbar: true,
-      },
       email: {
         name: "发邮件",
         url: "mailto:niko.pang96@gmail.com",
         icon: Icons.email,
-        navbar: false,
+        navbar: true,
       },
     },
   },
@@ -65,23 +59,43 @@ export const DATA_ZH: AppData = {
       company: "Cookiy AI",
       href: "https://www.cookiy.ai",
       badges: ["创始团队"],
-      location: "远程",
+      location: "Palo Alto, CA",
       title: "创始工程师 · 全栈 / Agent 平台",
-      logoUrl: "",
+      logoUrl: "/logos/cookiy.png",
       start: "Oct 2025",
       end: "Present",
       description:
         "Cookiy 是一个覆盖「研究计划 → 招募 → 访谈 → 报告」完整闭环的实时用户调研平台，目标是让 AI agent 端到端地驱动整个研究流程。我构建了实时多模态语音访谈 agent：级联 STT→LLM→TTS 流式管线，带 VAD、多语言 turn detection、barge-in 与低于一秒的首次响应（LLM ~300ms / TTS TTFT 150–250ms），并支持屏幕共享视觉，让 agent 能实时观察并追问用户的真实操作。我设计了团队的 agent 开发 harness（契约冻结进单一 CONTRACT.md，配 CI 校验与 drift 审计，现已是团队标准），以及基于单一事件循环 + 统一事件流的可插拔 agent runtime。我把整个平台封装为 30 个 MCP tools 并通过 OpenAI Apps 官方审核；用 RFC 8414/9728 OAuth discovery 统一了 agent / CLI 鉴权，compact token 比 JWT 小约 75%；759K+ 次 LLM 调用经 Cloudflare AI Gateway 路由，prompt-cache 命中率约 86%。招募模块由我从零搭建：supplier adapter（Prolific / CloudResearch / CINT）、可组合的甄别（screener）引擎、并发安全的匹配与计费引擎（钱包双写，drift=0），以及带确定性兜底、加了 guardrail 的 supplier-selection agent。",
     },
+    {
+      company: "Thoughtworks（思特沃克）",
+      href: "https://www.thoughtworks.com",
+      badges: [],
+      location: "中国",
+      title: "软件工程师 · 咨询师",
+      logoUrl: "/logos/thoughtworks.png",
+      start: "May 2022",
+      end: "Sep 2025",
+      description:
+        "企业级后端架构与 AI 应用咨询，作为 Feature Owner 负责从需求澄清到上线运维的端到端交付。在小样本智能客服 RAG PoC 中（客户仅有约 1 万字中文 FAQ，无法微调）：系统性评估中文 embedding 模型（m3e / text2vec / E5），查准率提升约 20%；引入 BM25 + Cross-Encoder 双通道重排序；结合 HyDE 思路构建「预设问题」Query Store 做双路径检索；用 RAGAS 搭建可复用的评测流程 —— 开放测试问答准确率 90%+。另主导澳大利亚某流媒体平台的元数据后端平台化改造：Java 21 + Spring Boot + Orkes Conductor 分布式视频处理工作流，Kubernetes / ArgoCD / Terraform 的 GitOps 交付，AWS 上 Kafka + Elasticsearch 的事件驱动监控，以及统一 VOD 与 Live 的多租户元数据层 —— 新业务线一周内可接入，处理效率提升约 40%，上线周期从数小时缩短到数十分钟。",
+    },
   ],
   education: [
     {
-      school: "University of New South Wales (UNSW)",
+      school: "新南威尔士大学（UNSW）",
       href: "https://www.unsw.edu.au",
-      degree: "信息技术硕士（Master of Information Technology）",
-      logoUrl: "",
+      degree: "计算机科学硕士（数据科学方向）",
+      logoUrl: "/logos/unsw.png",
       start: "2019",
-      end: "2021",
+      end: "2022",
+    },
+    {
+      school: "集美大学",
+      href: "https://www.jmu.edu.cn",
+      degree: "网络工程 工学学士",
+      logoUrl: "",
+      start: "2014",
+      end: "2018",
     },
   ],
   projects: [
@@ -170,6 +184,24 @@ export const DATA_ZH: AppData = {
       video: "",
     },
     {
+      title: "Claude Code Usage Dashboard",
+      href: "https://usage.nikopang.com",
+      dates: "2026",
+      active: true,
+      description:
+        "我是 AI coding 工具的重度使用者 —— 这个看板把「重度」变成了可量化的数据。GitHub Actions 流水线每天自动同步我的 Claude Code token 用量到公开页面：单月约 20 亿 token、$1.6k+ API 等值成本，按 input / output / 缓存拆分并展示每日成本。",
+      technologies: ["GitHub Actions", "TypeScript", "Automation"],
+      links: [
+        {
+          type: "Website",
+          href: "https://usage.nikopang.com",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/projects/token-usage.png",
+      video: "",
+    },
+    {
       title: "ard-registry",
       href: "https://github.com/n1k0ver3E/ard-registry",
       dates: "2026",
@@ -211,7 +243,7 @@ export const DATA_ZH: AppData = {
       title:
         "AOI: Turning Failed Trajectories into Training Signals for Autonomous Cloud Diagnosis",
       dates: "March 2026",
-      location: "arXiv preprint · cs.LG / cs.AI",
+      location: "在投 SIGKDD 2026 · arXiv preprint · cs.LG / cs.AI",
       description:
         "与人合著的多 agent 框架，用 LLM 自动化 SRE 诊断：通过 GRPO 把专家知识蒸馏进开源模型，用读写分离的架构隔离执行，并把失败的操作尝试转化为训练信号 —— 基准任务成功率 66.3%，其中仅失败分析一项就贡献了 +4.8pp。",
       image: "",
