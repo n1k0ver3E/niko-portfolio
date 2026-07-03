@@ -17,7 +17,7 @@ export const DATA = {
   description:
     "Full-stack engineer building agent platforms — realtime voice agents, agent harnesses, and the infrastructure that lets AI drive real products.",
   summary:
-    "I'm a founding team member at [Cookiy AI](https://www.cookiy.ai), a realtime user-research platform (funded at eight figures USD, 50k+ respondents and 700+ studies in production).\n\n" +
+    "I'm a founding team member at [Cookiy AI](https://www.cookiy.ai), a Silicon Valley–based realtime user-research platform (funded at eight figures USD, 50k+ respondents and 700+ studies in production).\n\n" +
     "On the research side, I co-authored [AOI](https://arxiv.org/abs/2603.03378) (under review at SIGKDD 2026), a multi-agent framework for autonomous cloud diagnosis.",
   avatarUrl: "https://avatars.githubusercontent.com/u/14194564?v=4",
   skills: [

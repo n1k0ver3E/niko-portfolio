@@ -12,7 +12,7 @@ export const DATA_ZH: AppData = {
   description:
     "全栈工程师，专注 agent 平台 —— 实时语音 agent、agent harness，以及让 AI 驱动真实产品的基础设施。",
   summary:
-    "我是 [Cookiy AI](https://www.cookiy.ai) 的创始团队成员。Cookiy 是一个实时用户调研平台（融资额八位数美元，生产环境累计服务 50k+ 受访者、700+ 研究项目）。\n\n" +
+    "我是 [Cookiy AI](https://www.cookiy.ai) 的创始团队成员。Cookiy 是一家总部位于美国硅谷的实时用户调研平台（融资额八位数美元，生产环境累计服务 50k+ 受访者、700+ 研究项目）。\n\n" +
     "研究方面，我与人合著了 [AOI](https://arxiv.org/abs/2603.03378)（在投 SIGKDD 2026），一个面向云端自主诊断的多 agent 框架。",
   avatarUrl: "https://avatars.githubusercontent.com/u/14194564?v=4",
   skills: DATA.skills,
