@@ -65,8 +65,6 @@ export const DATA_ZH: AppData = {
       logoUrl: "/logos/cookiy.png",
       start: "Oct 2025",
       end: "Present",
-      tagline:
-        "从零构建实时语音访谈 agent、团队 agent harness、MCP / CLI 接入层与招募业务线。",
       description:
         "Cookiy 是一个覆盖「研究计划 → 招募 → 访谈 → 报告」完整闭环的实时用户调研平台，目标是让 AI agent 端到端地驱动整个研究流程。我构建了实时多模态语音访谈 agent：级联 STT→LLM→TTS 流式管线，带 VAD、多语言 turn detection、barge-in 与低于一秒的首次响应（LLM ~300ms / TTS TTFT 150–250ms），并支持屏幕共享视觉，让 agent 能实时观察并追问用户的真实操作。我设计了团队的 agent 开发 harness（契约冻结进单一 CONTRACT.md，配 CI 校验与 drift 审计，现已是团队标准），以及基于单一事件循环 + 统一事件流的可插拔 agent runtime。我把整个平台封装为 30 个 MCP tools 并通过 OpenAI Apps 官方审核；用 RFC 8414/9728 OAuth discovery 统一了 agent / CLI 鉴权，compact token 比 JWT 小约 75%；759K+ 次 LLM 调用经 Cloudflare AI Gateway 路由，prompt-cache 命中率约 86%。招募模块由我从零搭建：supplier adapter（Prolific / CloudResearch / CINT）、可组合的甄别（screener）引擎、并发安全的匹配与计费引擎（钱包双写，drift=0），以及带确定性兜底、加了 guardrail 的 supplier-selection agent。",
     },
@@ -79,8 +77,6 @@ export const DATA_ZH: AppData = {
       logoUrl: "",
       start: "Feb 2024",
       end: "Jun 2024",
-      tagline:
-        "Part-time 联合创始人 —— 用 Python + LlamaIndex 落地基于 RAG 的企业沟通 bot。",
       description:
         "在 Thoughtworks 任职期间，以 part-time 技术负责人之一的身份联合创立了这家新西兰 AI 创业公司。主导基于 RAG 的 AI bot 产品，服务传统行业的企业-客户沟通场景：用 Python + LlamaIndex 设计并落地检索与生成链路，搭建 CI/CD 流水线，并构建 prompt 评测流水线来量化不同 prompt 对产品效果的影响。公司转向新商业模式后退出，为其下一阶段发展打好了技术底座。",
     },
@@ -93,8 +89,6 @@ export const DATA_ZH: AppData = {
       logoUrl: "/logos/thoughtworks.png",
       start: "May 2022",
       end: "Sep 2025",
-      tagline:
-        "企业级后端与 AI 应用咨询 —— 90%+ 准确率的 RAG PoC 与多租户流媒体元数据平台。",
       description:
         "企业级后端架构与 AI 应用咨询，作为 Feature Owner 负责从需求澄清到上线运维的端到端交付。在小样本智能客服 RAG PoC 中（客户仅有约 1 万字中文 FAQ，无法微调）：系统性评估中文 embedding 模型（m3e / text2vec / E5），查准率提升约 20%；引入 BM25 + Cross-Encoder 双通道重排序；结合 HyDE 思路构建「预设问题」Query Store 做双路径检索；用 RAGAS 搭建可复用的评测流程 —— 开放测试问答准确率 90%+。另主导澳大利亚某流媒体平台的元数据后端平台化改造：Java 21 + Spring Boot + Orkes Conductor 分布式视频处理工作流，Kubernetes / ArgoCD / Terraform 的 GitOps 交付，AWS 上 Kafka + Elasticsearch 的事件驱动监控，以及统一 VOD 与 Live 的多租户元数据层 —— 新业务线一周内可接入，处理效率提升约 40%，上线周期从数小时缩短到数十分钟。",
     },
