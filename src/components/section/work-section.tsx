@@ -15,9 +15,23 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
     );
   }
 
-  // A diamond-shaped mark only touches a circular frame at its 4 cardinal
-  // tips, so it reads as small next to square favicons — scale the inner
-  // image (not the frame) up to fill the circle.
+  // Thoughtworks keeps the original single-image render (the frame/inner
+  // split subtly changed how its square favicon sat in the circle).
+  if (src.includes("thoughtworks")) {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none"
+        onError={() => setImageError(true)}
+      />
+    );
+  }
+
+  // BoundlessAI's diamond mark only touches a circular frame at its 4
+  // cardinal tips, so it reads as small next to square favicons — scale the
+  // inner image (not the frame) up to fill the circle. Other logos render
+  // the same way with no scale.
   const scale = src.includes("boundless") ? "scale-[1.3]" : "";
 
   return (
