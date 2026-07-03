@@ -74,7 +74,7 @@ export const DATA_ZH: AppData = {
       badges: ["联合创始人", "Part-time"],
       location: "新西兰 · 远程",
       title: "联合创始人 / AI 工程师",
-      logoUrl: "",
+      logoUrl: "/logos/boundlessai.png",
       start: "Feb 2024",
       end: "Jun 2024",
       description:

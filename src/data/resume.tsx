@@ -93,7 +93,7 @@ export const DATA = {
       badges: ["Co-Founder", "Part-time"],
       location: "New Zealand · Remote",
       title: "Co-Founder / AI Engineer",
-      logoUrl: "",
+      logoUrl: "/logos/boundlessai.png",
       start: "Feb 2024",
       end: "Jun 2024",
       description:
