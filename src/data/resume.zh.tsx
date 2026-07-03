@@ -6,6 +6,13 @@ import type { AppData } from "./types";
 export const DATA_ZH: AppData = {
   name: "Niko Pang",
   initials: "NP",
+  roles: [
+    "ENTP",
+    "软件开发工程师",
+    "开源爱好者",
+    "AI 探索者",
+    "好奇心驱动",
+  ],
   url: "https://www.nikopang.com",
   location: "中国 · 天津",
   locationLink: "https://www.google.com/maps/place/tianjin",

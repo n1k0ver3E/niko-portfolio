@@ -11,6 +11,13 @@ import { Docker } from "@/components/ui/svgs/docker";
 export const DATA = {
   name: "Niko Pang",
   initials: "NP",
+  roles: [
+    "an ENTP",
+    "a Software Engineer",
+    "an Open-Source Enthusiast",
+    "an AI Explorer",
+    "Curiosity-Driven",
+  ],
   url: "https://www.nikopang.com",
   location: "Tianjin, China",
   locationLink: "https://www.google.com/maps/place/tianjin",

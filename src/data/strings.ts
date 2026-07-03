@@ -1,5 +1,6 @@
 const en = {
   heroGreetingPrefix: "Hi, I'm Niko (Yifan Pang)",
+  heroRolePrefix: "I'm ",
   about: "About",
   work: "Work Experience",
   education: "Education",
@@ -35,7 +36,8 @@ const en = {
 export type UIStrings = { [K in keyof typeof en]: string };
 
 const zh: UIStrings = {
-  heroGreetingPrefix: "你好，我是 Niko",
+  heroGreetingPrefix: "你好，我是 Niko（庞伊凡）",
+  heroRolePrefix: "我是 ",
   about: "关于我",
   work: "工作经历",
   education: "教育经历",

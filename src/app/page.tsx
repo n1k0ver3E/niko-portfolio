@@ -4,6 +4,7 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { InteractiveAvatar } from "@/components/interactive-avatar";
+import { Typewriter } from "@/components/typewriter";
 import { useData } from "@/data";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -31,6 +32,12 @@ export default function Page() {
                 yOffset={8}
                 text={`${t.heroGreetingPrefix}`}
               />
+              <BlurFade delay={BLUR_FADE_DELAY * 2}>
+                <p className="text-lg sm:text-xl font-medium tracking-tight text-muted-foreground">
+                  {t.heroRolePrefix}
+                  <Typewriter words={data.roles} className="text-foreground" />
+                </p>
+              </BlurFade>
               <BlurFadeText
                 className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
                 delay={BLUR_FADE_DELAY}
