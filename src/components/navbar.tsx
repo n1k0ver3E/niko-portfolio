@@ -1,6 +1,7 @@
 "use client";
 
 import { Dock, DockIcon } from "@/components/magicui/dock";
+import { GithubDockIcon } from "@/components/github-dock-icon";
 import { LanguageToggle } from "@/components/language-toggle";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -10,6 +11,9 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useData } from "@/data";
+
+const DOCK_ICON_CLASS =
+  "rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors";
 
 export default function Navbar() {
   const { data, t } = useData();
@@ -27,7 +31,7 @@ export default function Navbar() {
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
                 >
-                  <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+                  <DockIcon className={DOCK_ICON_CLASS}>
                     <item.icon className="size-full rounded-sm overflow-hidden object-contain" />
                   </DockIcon>
                 </a>
@@ -50,6 +54,16 @@ export default function Navbar() {
         {Object.entries(data.contact.social)
           .filter(([_, social]) => social.navbar)
           .map(([name, social], index) => {
+            if ("accounts" in social) {
+              return (
+                <GithubDockIcon
+                  key={`social-${name}-${index}`}
+                  icon={social.icon}
+                  accounts={social.accounts}
+                  className={DOCK_ICON_CLASS}
+                />
+              );
+            }
             const isExternal = social.url.startsWith("http");
             const IconComponent = social.icon;
             return (
@@ -60,7 +74,7 @@ export default function Navbar() {
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
                   >
-                    <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+                    <DockIcon className={DOCK_ICON_CLASS}>
                       <IconComponent className="size-full rounded-sm overflow-hidden object-contain" />
                     </DockIcon>
                   </a>
@@ -82,7 +96,7 @@ export default function Navbar() {
         />
         <Tooltip>
           <TooltipTrigger asChild>
-            <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+            <DockIcon className={DOCK_ICON_CLASS}>
               <LanguageToggle className="size-full cursor-pointer" />
             </DockIcon>
           </TooltipTrigger>

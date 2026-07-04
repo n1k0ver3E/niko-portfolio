@@ -7,11 +7,11 @@ export const DATA_ZH: AppData = {
   name: "Niko Pang",
   initials: "NP",
   roles: [
-    "ENTP",
-    "软件开发工程师",
-    "开源爱好者",
-    "AI 探索者",
-    "好奇心驱动",
+    "Agent 平台工程师",
+    "实时语音 Agent 构建者",
+    "Agent Harness 工程师",
+    "全栈工程师",
+    "开源建设者",
   ],
   url: "https://www.nikopang.com",
   location: "中国 · 天津",
@@ -26,7 +26,7 @@ export const DATA_ZH: AppData = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "首页" },
     {
-      href: "https://niko-pang.vercel.app",
+      href: "https://blog.nikopang.com",
       icon: NotebookIcon,
       label: "博客",
     },
@@ -37,15 +37,12 @@ export const DATA_ZH: AppData = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/n1k0ver3E",
         icon: Icons.github,
         navbar: true,
-      },
-      GitWork: {
-        name: "GitHub（Cookiy）",
-        url: "https://github.com/Pn1ko",
-        icon: Icons.github,
-        navbar: true,
+        accounts: [
+          { label: "个人", url: "https://github.com/n1k0ver3E" },
+          { label: "Cookiy", url: "https://github.com/Pn1ko" },
+        ],
       },
       X: {
         name: "X",

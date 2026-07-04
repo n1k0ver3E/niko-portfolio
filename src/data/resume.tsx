@@ -12,11 +12,11 @@ export const DATA = {
   name: "Niko Pang",
   initials: "NP",
   roles: [
-    "an ENTP",
-    "a Software Engineer",
-    "an Open-Source Enthusiast",
-    "an AI Explorer",
-    "Curiosity-Driven",
+    "an Agent-Platform Engineer",
+    "a Realtime Voice-Agent Builder",
+    "an Agent-Harness Engineer",
+    "a Full-Stack Engineer",
+    "an Open-Source Builder",
   ],
   url: "https://www.nikopang.com",
   location: "Tianjin, China",
@@ -45,7 +45,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     {
-      href: "https://niko-pang.vercel.app",
+      href: "https://blog.nikopang.com",
       icon: NotebookIcon,
       label: "Blog",
     },
@@ -56,15 +56,12 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/n1k0ver3E",
         icon: Icons.github,
         navbar: true,
-      },
-      GitWork: {
-        name: "GitHub (Cookiy)",
-        url: "https://github.com/Pn1ko",
-        icon: Icons.github,
-        navbar: true,
+        accounts: [
+          { label: "Personal", url: "https://github.com/n1k0ver3E" },
+          { label: "Cookiy", url: "https://github.com/Pn1ko" },
+        ],
       },
       X: {
         name: "X",

@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion, type MotionValue, useMotionValue, useSpring, useTransform } from "motion/react";
-import { createContext, useContext, useRef, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 
 interface DockProps {
   className?: string;
@@ -27,17 +27,39 @@ interface DockContextValue {
   mouseX: MotionValue<number>;
   magnification: number;
   distance: number;
+  canHover: boolean;
 }
 
 const DockContext = createContext<DockContextValue | null>(null);
 
+/**
+ * True only on devices with a precise, hover-capable pointer (mouse/trackpad).
+ * On touchscreens a tap fires a synthetic mousemove but no matching mouseleave —
+ * and the synthetic move even arrives *after* touchend — so the magnify would
+ * stick, never shrinking back. Gate the whole effect on hover capability instead.
+ */
+function useCanHover() {
+  const [canHover, setCanHover] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setCanHover(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return canHover;
+}
+
 const Dock = ({ className, children, magnification = DEFAULT_MAGNIFICATION, distance = DEFAULT_DISTANCE }: DockProps) => {
   const mouseX = useMotionValue(Infinity);
+  const canHover = useCanHover();
 
   return (
-    <DockContext.Provider value={{ mouseX, magnification, distance }}>
+    <DockContext.Provider value={{ mouseX, magnification, distance, canHover }}>
       <motion.div
-        onMouseMove={(e) => mouseX.set(e.pageX)}
+        onMouseMove={(e) => {
+          if (canHover) mouseX.set(e.pageX);
+        }}
         onMouseLeave={() => mouseX.set(Infinity)}
         className={cn("mx-auto w-max h-full flex items-end justify-center overflow-visible rounded-full border", className)}
       >
@@ -55,7 +77,7 @@ const DockIcon = ({ className, children }: DockIconProps) => {
     throw new Error("DockIcon must be used within a Dock component");
   }
 
-  const { mouseX, magnification, distance } = context;
+  const { mouseX, magnification, distance, canHover } = context;
 
   const distanceCalc = useTransform(mouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -71,14 +93,21 @@ const DockIcon = ({ className, children }: DockIconProps) => {
     SPRING
   );
 
+  // On touch devices keep a fixed size so a tap never leaves an icon stuck enlarged.
   return (
     <motion.div
       ref={ref}
-      style={{ width: containerSize, height: containerSize }}
+      style={{
+        width: canHover ? containerSize : BASE_SIZE,
+        height: canHover ? containerSize : BASE_SIZE,
+      }}
       className={cn("relative flex aspect-square items-center justify-center rounded-full shrink-0", className)}
     >
       <motion.div
-        style={{ width: iconSize, height: iconSize }}
+        style={{
+          width: canHover ? iconSize : BASE_ICON_SIZE,
+          height: canHover ? iconSize : BASE_ICON_SIZE,
+        }}
         className="flex items-center justify-center"
       >
         {children}
