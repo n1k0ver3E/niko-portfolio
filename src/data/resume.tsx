@@ -221,14 +221,14 @@ export const DATA = {
       video: "",
     },
     {
-      title: "open-browser-use",
+      title: "open-browser-use · Contributor",
       href: "https://github.com/iFurySt/open-browser-use",
       dates: "2026",
       active: true,
       showStars: true,
       description:
-        "Contributor to [iFurySt](https://github.com/iFurySt)'s platform-neutral Browser Use for AI agents — real Chrome automation with a CLI plus JS / Python / Go SDKs over JSON-RPC, no lock-in, dead simple. 170+ stars on GitHub.",
-      technologies: ["JavaScript", "CDP", "CLI", "SDK"],
+        "Platform-neutral browser-automation layer for AI agents — real Chrome via a Go native-messaging host, driven over JSON-RPC by JS / Python / Go SDKs and a CLI. I built multi-Chrome-profile routing & selection and tab-group management, and reverse-engineered the full native-messaging + CDP stack (benchmarking it against Codex's and Claude's browser layers).",
+      technologies: ["Go", "Native Messaging", "CDP", "JSON-RPC"],
       links: [
         {
           type: "Source",

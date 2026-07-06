@@ -202,14 +202,14 @@ export const DATA_ZH: AppData = {
       video: "",
     },
     {
-      title: "open-browser-use",
+      title: "open-browser-use · 贡献者",
       href: "https://github.com/iFurySt/open-browser-use",
       dates: "2026",
       active: true,
       showStars: true,
       description:
-        "参与 [iFurySt](https://github.com/iFurySt) 的平台中立 Browser Use 项目 —— 面向 AI agent 的真实 Chrome 自动化，提供 CLI 与 JS / Python / Go SDK，基于 JSON-RPC 协议，无厂商锁定、极简上手。GitHub 170+ star。",
-      technologies: ["JavaScript", "CDP", "CLI", "SDK"],
+        "面向 AI agent 的平台中立浏览器自动化层 —— 通过 Go 原生消息（native messaging）宿主驱动真实 Chrome，JS / Python / Go SDK 与 CLI 均基于 JSON-RPC 调用。我实现了多 Chrome profile 的路由与选择、以及 tab group 管理，并逆向了整套 native-messaging + CDP 栈（并与 Codex、Claude 的浏览器层做了对比基准）。",
+      technologies: ["Go", "Native Messaging", "CDP", "JSON-RPC"],
       links: [
         {
           type: "Source",
